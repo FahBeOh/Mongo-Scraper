@@ -1,0 +1,9 @@
+*{
+    font-family: 'Eczar', serif;
+}
+.navbar{
+    background-color: #2562cd;
+}
+.jumbotron{
+    background-image: url("/assets/images/news.jpeg")
+}

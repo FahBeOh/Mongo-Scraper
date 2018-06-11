@@ -2,7 +2,6 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
 var mongoose = require("mongoose");
-
 // var axios = require("axios");
 // var cheerio = require("cheerio");
 
@@ -28,7 +27,7 @@ app.use(routes);
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-mongoose.connect("mongodb://localhost/week18Populater");
+mongoose.connect("mongodb://localhost/scrapedArticles");
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {

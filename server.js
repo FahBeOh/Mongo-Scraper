@@ -1,8 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
-// var mongojs = require("mongojs");
-// var mongoose = require("mongoose");
+var mongoose = require("mongoose");
 
 // var axios = require("axios");
 // var cheerio = require("cheerio");
@@ -28,6 +27,12 @@ app.use(routes);
 // Set Handlebars.
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+mongoose.connect("mongodb://localhost/week18Populater");
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+});
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
